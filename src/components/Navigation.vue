@@ -1,5 +1,9 @@
 <template>
-    
+<div>
+    <span v-for="routes in links" v-bind:key="routes.id" replace>
+        <router-link :to="`${routes.page}`">{{routes.text}}</router-link>
+    </span>
+</div>
 </template>
 
 <script>

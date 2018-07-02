@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <span>Vue.js PWA</span>
+      <Navigation></Navigation>
     </header>
     <main>
       <router-view></router-view>
@@ -10,8 +10,12 @@
 </template>
 
 <script>
+import Navigation from '@/components/Navigation.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    'Navigation': Navigation
+  }
 }
 </script>
 
