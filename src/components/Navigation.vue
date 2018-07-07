@@ -1,21 +1,45 @@
 <template>
-    <div id="navigation">
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Experience</li>
-                <li>Projects</li>
-                 <li>Resume</li>
-            </ul>
-        </nav> 
-    </div>
+<nav>
+    <span v-for="routes in links" v-bind:key="routes.id" replace>
+        <router-link :to="`${routes.page}`">{{routes.text}}</router-link>
+    </span>
+</nav>
 </template>
 
 <script>
 export default {
-  name: "Navigation"
+  name: "Navigation",
+  data() {
+    return {
+      links: [
+        {
+          id: 0,
+          text: "Home",
+          path: "/"
+        },
+        {
+          id: 1,
+          text: "Experience",
+          path: "/experience"
+        },
+        {
+          id: 2,
+          text: "Projects",
+          path: "/projects"
+        },
+        {
+          id: 3,
+          text: "Resume",
+          path: "/resume"
+        }
+      ]
+    };
+  }
 };
 </script>
 
 <style>
+nav {
+  display: block;
+}
 </style>
