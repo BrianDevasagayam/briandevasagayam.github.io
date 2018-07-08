@@ -1,16 +1,26 @@
 <template>
-<nav>
-    <span v-for="routes in links" v-bind:key="routes.id" replace>
-        <router-link :to="`${routes.page}`">{{routes.text}}</router-link>
-    </span>
-</nav>
+  <div id="navigation">
+    <div id="nav-side-mobile">     
+      <nav>
+          <li v-for="routes in links" v-bind:key="routes.id">
+              <router-link class="links" :to="`${routes.page}`">{{routes.text}}</router-link>
+          </li>
+      </nav>
+    </div>
+    <div id="nav-bar-mobile">
+
+    </div>
+    <div id="nav-bar-desktop">
+
+    </div>  
+  </div>
 </template>
 
 <script>
 export default {
   name: "Navigation",
   data() {
-    return {
+  return {
       links: [
         {
           id: 0,
@@ -39,7 +49,16 @@ export default {
 </script>
 
 <style>
-nav {
+li {
   display: block;
+  list-style-type: none;
+}
+.links {
+  text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  li {
+    display: inline;
+  }
 }
 </style>
