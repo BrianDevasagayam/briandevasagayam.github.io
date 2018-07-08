@@ -8,7 +8,7 @@
       </nav>
     </div>
     <div id="nav-bar-mobile">
-
+      <li><router-link to="/">Brian Devasagayam</router-link></li>
     </div>
     <div id="nav-bar-desktop">
       <nav>
