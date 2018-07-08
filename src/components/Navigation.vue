@@ -1,19 +1,19 @@
 <template>
   <div id="navigation">
+    <div id="nav-bar-mobile">
+      <div id="ham-icon">
+        <div class="bar one"></div>
+        <div class="bar two"></div>
+        <div class="bar three"></div>
+      </div>
+      <div class="home"><router-link class="links" to="/">Brian Devasagayam</router-link></div>
+    </div>
     <div id="nav-side-mobile">     
       <nav>
           <li v-for="routes in links" v-bind:key="routes.id">
               <router-link class="links" :to="`${routes.page}`">{{routes.text}}</router-link>
           </li>
       </nav>
-    </div>
-    <div id="nav-bar-mobile">
-      <li><router-link to="/">Brian Devasagayam</router-link></li>
-      <div id="ham-icon">
-        <div class="bar one"></div>
-        <div class="bar two"></div>
-        <div class="bar three"></div>
-      </div>
     </div>
     <div id="nav-bar-desktop">
       <nav>
@@ -59,15 +59,38 @@ export default {
 
 <style>
 li {
-  display: block;
   list-style-type: none;
 }
 .links {
   text-decoration: none;
 }
-@media screen and (min-width: 768px) {
-  li {
-    display: inline;
-  }
+#nav-bar-mobile {
+  background-color: red;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  display: inline-flex;
+  position: relative;
+}
+.bar {
+  height: 3px;
+  width: 22px;
+  background-color: white;
+  margin: 3px auto;
+  border-radius: 3px;
+}
+#ham-icon {
+  margin: auto 0;
+  padding-left: 10px;
+}
+.home {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+#nav-side-mobile {
+}
+#nav-bar-desktop {
+  display: none;
 }
 </style>
