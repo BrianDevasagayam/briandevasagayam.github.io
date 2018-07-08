@@ -9,6 +9,11 @@
     </div>
     <div id="nav-bar-mobile">
       <li><router-link to="/">Brian Devasagayam</router-link></li>
+      <div id="ham-icon">
+        <div class="bar one"></div>
+        <div class="bar two"></div>
+        <div class="bar three"></div>
+      </div>
     </div>
     <div id="nav-bar-desktop">
       <nav>
