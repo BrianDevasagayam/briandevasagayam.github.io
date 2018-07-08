@@ -11,7 +11,11 @@
 
     </div>
     <div id="nav-bar-desktop">
-
+      <nav>
+          <li v-for="routes in links" v-bind:key="routes.id">
+              <router-link class="links" :to="`${routes.page}`">{{routes.text}}</router-link>
+          </li>
+      </nav>
     </div>  
   </div>
 </template>
@@ -20,7 +24,7 @@
 export default {
   name: "Navigation",
   data() {
-  return {
+    return {
       links: [
         {
           id: 0,
