@@ -1,17 +1,17 @@
 <template>
   <div id="navigation">
-    <div id="nav-bar-mobile">
-      <div id="ham-icon">
+    <div id="nav-bar-mobile beGone">
+      <div id="ham-icon" class="X">
         <div class="bar one"></div>
         <div class="bar two"></div>
         <div class="bar three"></div>
       </div>
-      <div class="home"><router-link class="links" to="/">Brian Devasagayam</router-link></div>
+      <div class="home"><router-link class="links beGone" to="/">Brian Devasagayam</router-link></div>
     </div>
     <div id="nav-side-mobile">     
-      <nav>
-          <li v-for="routes in links" v-bind:key="routes.id">
-              <router-link class="links" :to="`${routes.page}`">{{routes.text}}</router-link>
+      <nav class="nav-side">
+          <li class="side-links" v-for="routes in links" v-bind:key="routes.id">
+              <router-link class="links side" :to="`${routes.page}`">{{routes.text}}</router-link>
           </li>
       </nav>
     </div>
@@ -63,7 +63,7 @@ li {
 }
 .links {
   text-decoration: none;
-  color: #e0e2db;
+  color: black;
 }
 #nav-bar-mobile {
   background-color: #7c8d8a;
@@ -90,6 +90,31 @@ li {
   transform: translate(-50%, 0);
 }
 #nav-side-mobile {
+  height: 100vh;
+  width: 100vw;
+  z-index: 20;
+  background-color: white;
+}
+.beGone {
+  display: none;
+}
+.X {
+  float: left;
+  padding-top: 10px;
+}
+.X div {
+  background-color: black;
+}
+.nav-side {
+  padding-top: 50px;
+  padding-left: 10px;
+}
+.side {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.side-links {
+  padding-bottom: 10px;
 }
 #nav-bar-desktop {
   display: none;
