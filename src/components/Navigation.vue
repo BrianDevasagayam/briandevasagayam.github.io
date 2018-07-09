@@ -63,9 +63,10 @@ li {
 }
 .links {
   text-decoration: none;
+  color: #e0e2db;
 }
 #nav-bar-mobile {
-  background-color: red;
+  background-color: #7c8d8a;
   height: 50px;
   line-height: 50px;
   width: 100%;

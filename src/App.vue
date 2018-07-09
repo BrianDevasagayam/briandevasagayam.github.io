@@ -21,11 +21,12 @@ export default {
 
 <style>
 body {
-  margin: 0;
+  /* margin: 0;
   background-image: url("assets/background.jpg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  background-color: #889696;
 }
 </style>
