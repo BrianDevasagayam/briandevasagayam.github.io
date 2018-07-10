@@ -1,12 +1,12 @@
 <template>
   <div id="navigation">
-    <div id="nav-bar-mobile beGone">
+    <div id="nav-bar-mobile">
       <div id="ham-icon">
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <div class="home"><router-link class="links" to="/">Brian Devasagayam</router-link></div>
+      <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
     </div>
     <div id="nav-side-mobile">     
       <nav>
@@ -75,4 +75,44 @@ export default {
    for mobile side it should be the links and animate to take up entire screen
    background should be white? or some animated thing too
    the ham-icon should be three bars and animate into an X*/
+/* For testing */
+#nav-side-mobile,
+#nav-bar-desktop {
+  display: none;
+}
+/* Code */
+#nav-bar-mobile {
+  height: 45px;
+  width: 100%;
+  background-color: white;
+  position: relative;
+}
+#ham-icon {
+  height: 100%;
+  width: 10%;
+  position: absolute;
+  left: 3%;
+  top: 25%;
+}
+#ham-icon span {
+  height: 5px;
+  width: 100%;
+  background-color: black;
+  display: block;
+  margin: 2px auto;
+  border-radius: 5px;
+}
+.home {
+  width: 180px;
+  line-height: 45px;
+  vertical-align: middle;
+  position: absolute;
+  left: 50%;
+  margin: 0 0 0 -90px;
+}
+.links {
+  text-decoration: none;
+  color: black;
+  font-family: "Helvetica";
+}
 </style>
