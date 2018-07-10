@@ -1,15 +1,15 @@
 <template>
   <div id="navigation">
     <div id="nav-bar-mobile beGone">
-      <div id="ham-icon" class="X">
-        <div class="bar one"></div>
-        <div class="bar two"></div>
-        <div class="bar three"></div>
+      <div id="ham-icon">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <div class="home"><router-link class="links beGone" to="/">Brian Devasagayam</router-link></div>
+      <div class="home"><router-link class="links" to="/">Brian Devasagayam</router-link></div>
     </div>
     <div id="nav-side-mobile">     
-      <nav class="nav-side">
+      <nav>
           <li class="side-links" v-for="routes in links" v-bind:key="routes.id">
               <router-link class="links side" :to="`${routes.page}`">{{routes.text}}</router-link>
           </li>
@@ -58,65 +58,21 @@ export default {
 </script>
 
 <style>
-li {
-  list-style-type: none;
-}
-.links {
-  text-decoration: none;
-  color: black;
-}
-#nav-bar-mobile {
-  background-color: #7c8d8a;
-  height: 50px;
-  line-height: 50px;
-  width: 100%;
-  display: inline-flex;
-  position: relative;
-}
-.bar {
-  height: 3px;
-  width: 22px;
-  background-color: white;
-  margin: 3px auto;
-  border-radius: 3px;
-}
-#ham-icon {
-  margin: auto 0;
-  padding-left: 10px;
-}
-.home {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-#nav-side-mobile {
-  height: 100vh;
-  width: 100vw;
-  z-index: 20;
-  background-color: white;
-}
-.beGone {
-  display: none;
-}
-.X {
-  float: left;
-  padding-top: 10px;
-}
-.X div {
-  background-color: black;
-}
-.nav-side {
-  padding-top: 50px;
-  padding-left: 10px;
-}
-.side {
-  font-size: 20px;
-  padding-bottom: 10px;
-}
-.side-links {
-  padding-bottom: 10px;
-}
-#nav-bar-desktop {
-  display: none;
-}
+/* Stuff to think about/do */
+/* So I want a website thats built mobile first
+   It needs to be fire
+   Need to figure out desgin and stuff (fonts colours feel)
+   Need to figure out what kind of background I want and how to make it
+   Need navigation bar 
+   split into a mobile bar + side
+   and a desktop bar no side
+   the bar for mobile should be ham-icon and my name
+   bar for desktop should have all the links with home being my name like this :
+   --------------
+   Brian small
+   Devasgayam big
+   ----------------
+   for mobile side it should be the links and animate to take up entire screen
+   background should be white? or some animated thing too
+   the ham-icon should be three bars and animate into an X*/
 </style>
