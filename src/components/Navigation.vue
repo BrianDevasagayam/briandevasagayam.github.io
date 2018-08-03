@@ -6,7 +6,7 @@
         <span></span>
         <span></span>
       </div>
-      <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
+      <div class="home"><router-link class="links" to="/">Brian Devasagayam</router-link></div>
     </div>
     <div id="nav-side-mobile">     
       <nav>
