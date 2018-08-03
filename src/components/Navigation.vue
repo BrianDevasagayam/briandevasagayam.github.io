@@ -113,6 +113,6 @@ export default {
 .links {
   text-decoration: none;
   color: black;
-  font-family: "Helvetica";
+  font-family: "Roboto";
 }
 </style>
