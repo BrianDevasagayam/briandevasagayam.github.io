@@ -6,7 +6,7 @@
         <span></span>
         <span></span>
       </div>
-      <div class="home"><router-link class="links" to="/">Brian Devasagayam</router-link></div>
+      <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
     </div>
     <div id="nav-side-mobile">     
       <nav>
@@ -57,7 +57,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* Stuff to think about/do */
 /* So I want a website thats built mobile first
    It needs to be fire
@@ -78,41 +78,62 @@ export default {
 /* For testing */
 #nav-side-mobile,
 #nav-bar-desktop {
-  display: none;
+  /* display: none; */
 }
 /* Code */
 #nav-bar-mobile {
-  height: 45px;
+  height: 60px;
   width: 100%;
-  background-color: white;
   position: relative;
 }
 #ham-icon {
-  height: 100%;
-  width: 10%;
+  width: 27px;
   position: absolute;
-  left: 3%;
-  top: 25%;
+  right: 20px;
+  top: 50%;
+  margin-top: -10px;
 }
 #ham-icon span {
-  height: 5px;
+  height: 3px;
   width: 100%;
-  background-color: black;
+  background-color: #76323f;
   display: block;
   margin: 2px auto;
   border-radius: 5px;
 }
-.home {
+.home .links {
   width: 180px;
-  line-height: 45px;
+  line-height: 60px;
   vertical-align: middle;
   position: absolute;
-  left: 50%;
-  margin: 0 0 0 -90px;
+  color: #76323f;
+  left: 12px;
+  font-weight: 700;
 }
 .links {
   text-decoration: none;
   color: black;
   font-family: "Roboto";
+}
+li {
+  list-style-type: none;
+}
+#navigation #nav-bar-mobile:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: visible;
+  width: 100%;
+  height: 250px;
+  background: white;
+  z-index: -1;
+  -webkit-transform: skewY(2.5deg);
+  -moz-transform: skewY(2.5deg);
+  -ms-transform: skewY(2.5deg);
+  -o-transform: skewY(2.5deg);
+  transform: skewY(2.5deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: initial;
 }
 </style>
