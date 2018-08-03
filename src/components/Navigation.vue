@@ -78,15 +78,17 @@ export default {
 /* For testing */
 #nav-side-mobile,
 #nav-bar-desktop {
-  /* display: none; */
+  display: none;
 }
 /* Code */
+/* Navigation bar for mobile */
 #nav-bar-mobile {
   height: 60px;
   width: 100%;
   position: relative;
 }
 #ham-icon {
+  height: 60px;
   width: 27px;
   position: absolute;
   right: 20px;
@@ -103,7 +105,7 @@ export default {
 }
 .home .links {
   width: 180px;
-  line-height: 60px;
+  line-height: 55px;
   vertical-align: middle;
   position: absolute;
   color: #76323f;
@@ -119,6 +121,25 @@ li {
   list-style-type: none;
 }
 #navigation #nav-bar-mobile:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: visible;
+  width: 100%;
+  height: 250px;
+  background: white;
+  z-index: -1;
+  -webkit-transform: skewY(2.5deg);
+  -moz-transform: skewY(2.5deg);
+  -ms-transform: skewY(2.5deg);
+  -o-transform: skewY(2.5deg);
+  transform: skewY(2.5deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: initial;
+}
+/* Desktop navigation bar */
+#navigation #nav-bar-desktop:before {
   content: "";
   position: absolute;
   left: 0;
