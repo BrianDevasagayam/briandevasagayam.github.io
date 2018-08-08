@@ -1,25 +1,27 @@
 <template>
   <div id="navigation">
     <div id="nav-bar-mobile">
-      <div id="ham-icon">
+      <div id="ham-icon" @click="isActive = !isActive">
         <span></span>
         <span></span>
         <span></span>
       </div>
       <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
     </div>
-    <div id="nav-side-mobile">     
-      <nav>
+    <div id="nav-side-mobile" :class="{ 'nav-active' : isActive }">     
+      <div id="nav-side-back">  
+        <nav>
           <li class="side-links" v-for="routes in links" v-bind:key="routes.id">
-              <router-link class="links side" :to="`${routes.page}`">{{routes.text}}</router-link>
+            <router-link class="links side" :to="`${routes.page}`">{{routes.text}}</router-link>
           </li>
-      </nav>
+        </nav>
+      </div>
     </div>
     <div id="nav-bar-desktop">
       <nav>
-          <li v-for="routes in links" v-bind:key="routes.id">
-              <router-link class="links" :to="`${routes.page}`">{{routes.text}}</router-link>
-          </li>
+        <li v-for="routes in links" v-bind:key="routes.id">
+          <router-link class="links" :to="`${routes.page}`">{{routes.text}}</router-link>
+        </li>
       </nav>
     </div>  
   </div>
@@ -30,6 +32,7 @@ export default {
   name: "Navigation",
   data() {
     return {
+      isActive: false,
       links: [
         {
           id: 0,
@@ -75,8 +78,24 @@ export default {
    for mobile side it should be the links and animate to take up entire screen
    background should be white? or some animated thing too
    the ham-icon should be three bars and animate into an X*/
-/* For testing */
-#nav-side-mobile,
+/* #nav-side-mobile:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: visible;
+  width: 100%;
+  height: 250px;
+  background: red;
+  z-index: -1;
+  -webkit-transform: skewY(2.5deg);
+  -moz-transform: skewY(2.5deg);
+  -ms-transform: skewY(2.5deg);
+  -o-transform: skewY(2.5deg);
+  transform: skewY(2.5deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: initial;
+} */
 #nav-bar-desktop {
   display: none;
 }
@@ -120,26 +139,35 @@ export default {
 li {
   list-style-type: none;
 }
-#navigation #nav-bar-mobile:before {
+#nav-bar-mobile {
   content: "";
-  position: absolute;
+  position: relative;
   left: 0;
-  bottom: 0;
+  top: 0;
   overflow: visible;
   width: 100%;
-  height: 250px;
+  height: 60px;
   background: white;
   z-index: -1;
-  -webkit-transform: skewY(2.5deg);
-  -moz-transform: skewY(2.5deg);
-  -ms-transform: skewY(2.5deg);
-  -o-transform: skewY(2.5deg);
-  transform: skewY(2.5deg);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  -moz-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  -ms-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  -o-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
   -webkit-backface-visibility: hidden;
   backface-visibility: initial;
 }
+#nav-side-mobile {
+  width: 100vw;
+  height: calc(100vh - 51px);
+  top: 51px;
+  background-color: #76323f;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 100%);
+}
+/* Navigation Side Menu */
 /* Desktop navigation bar */
-#navigation #nav-bar-desktop:before {
+#nav-bar-desktop:before {
   content: "";
   position: absolute;
   left: 0;
