@@ -1,21 +1,19 @@
 <template>
   <div id="navigation">
-    <div id="nav-bar-mobile">
-      <div id="ham-icon" @click="isActive = !isActive">
+    <div id="ham-icon" @click="isActive = !isActive">
         <span></span>
         <span></span>
         <span></span>
       </div>
+    <div id="nav-bar-mobile">
       <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
     </div>
-    <div id="nav-side-mobile" :class="{ 'nav-active' : isActive }">     
-      <div id="nav-side-back">  
+    <div id="nav-side-mobile" :class="{ 'nav-active' : isActive }">       
         <nav>
-          <li class="side-links" v-for="routes in links" v-bind:key="routes.id">
-            <router-link class="links side" :to="`${routes.page}`">{{routes.text}}</router-link>
-          </li>
+          <div class="side-links" :class="{ 'side' : isActive}" v-for="routes in links" v-bind:key="routes.id">
+            <router-link class="links" :to="`${routes.page}`">{{routes.text}}</router-link>
+          </div>
         </nav>
-      </div>
     </div>
     <div id="nav-bar-desktop">
       <nav>
@@ -61,58 +59,21 @@ export default {
 </script>
 
 <style scoped>
-/* Stuff to think about/do */
-/* So I want a website thats built mobile first
-   It needs to be fire
-   Need to figure out desgin and stuff (fonts colours feel)
-   Need to figure out what kind of background I want and how to make it
-   Need navigation bar 
-   split into a mobile bar + side
-   and a desktop bar no side
-   the bar for mobile should be ham-icon and my name
-   bar for desktop should have all the links with home being my name like this :
-   --------------
-   Brian small
-   Devasgayam big
-   ----------------
-   for mobile side it should be the links and animate to take up entire screen
-   background should be white? or some animated thing too
-   the ham-icon should be three bars and animate into an X*/
-/* #nav-side-mobile:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  overflow: visible;
-  width: 100%;
-  height: 250px;
-  background: red;
-  z-index: -1;
-  -webkit-transform: skewY(2.5deg);
-  -moz-transform: skewY(2.5deg);
-  -ms-transform: skewY(2.5deg);
-  -o-transform: skewY(2.5deg);
-  transform: skewY(2.5deg);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: initial;
-} */
+/* Testing Code */
 #nav-bar-desktop {
   display: none;
 }
 /* Code */
 /* Navigation bar for mobile */
-#nav-bar-mobile {
-  height: 60px;
-  width: 100%;
-  position: relative;
+#navigation {
+  width: 100vw;
 }
 #ham-icon {
-  height: 60px;
+  height: 20px;
   width: 27px;
   position: absolute;
   right: 20px;
-  top: 50%;
-  margin-top: -10px;
+  top: 20px;
 }
 #ham-icon span {
   height: 3px;
@@ -123,12 +84,13 @@ export default {
   border-radius: 5px;
 }
 .home .links {
-  width: 180px;
-  line-height: 55px;
+  width: 185px;
+  line-height: 60px;
   vertical-align: middle;
   position: absolute;
   color: #76323f;
-  left: 12px;
+  left: 15px;
+  font-size: 1.1em;
   font-weight: 700;
 }
 .links {
@@ -144,45 +106,57 @@ li {
   position: relative;
   left: 0;
   top: 0;
-  overflow: visible;
-  width: 100%;
+  overflow: hidden;
+  width: 100vw;
   height: 60px;
   background: white;
   z-index: -1;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-  -moz-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-  -ms-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-  -o-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: initial;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
+  -moz-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
+  -ms-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
+  -o-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
 }
+/* Navigation Side Menu */
 #nav-side-mobile {
   width: 100vw;
   height: calc(100vh - 51px);
-  top: 51px;
+  left: -100vw;
+  top: 50px;
   background-color: #76323f;
-  position: absolute;
-  clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 100%);
+  position: fixed;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-clip-path: polygon(0 0, 100vw 5px, 100vw 100%, 0 100%);
+  -moz-clip-path: polygon(0 0, 100vw 5px, 100vw 100%, 0 100%);
+  -ms-clip-path: polygon(0 0, 100vw 5px, 100vw 100%, 0 100%);
+  -o-clip-path: polygon(0 0, 100vw 5px, 100vw 100%, 0 100%);
+  clip-path: polygon(0 0, 100vw 5px, 100vw 100%, 0 100%);
+
+  /* Transitions */
+  transition: left 1s ease-in-out, top 1s ease-in-out;
 }
-/* Navigation Side Menu */
-/* Desktop navigation bar */
-#nav-bar-desktop:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  overflow: visible;
+.nav-active {
+  top: 55px !important;
+  left: 0vw !important;
+}
+.side-links {
+  font-size: 0.6em;
+  margin: 10px auto;
+  visibility: hidden;
+  transition: visibility 2s ease-in 1s, font-size 2s ease-in 1s;
+}
+.side {
+  visibility: visible;
+  font-size: 1.4em;
+}
+#nav-side-mobile .links {
+  color: #d7cec7;
+}
+#nav-side-back {
   width: 100%;
-  height: 250px;
-  background: white;
-  z-index: -1;
-  -webkit-transform: skewY(2.5deg);
-  -moz-transform: skewY(2.5deg);
-  -ms-transform: skewY(2.5deg);
-  -o-transform: skewY(2.5deg);
-  transform: skewY(2.5deg);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: initial;
+}
+/* Desktop navigation bar */
+#nav-bar-desktop {
 }
 </style>
