@@ -10,16 +10,17 @@
     </div>
     <div id="nav-side-mobile" :class="{ 'nav-active' : isActive }">       
         <nav>
-          <div class="side-links" :class="{ 'side' : isActive}" v-for="routes in links" v-bind:key="routes.id">
-            <router-link class="links" :to="`${routes.page}`">{{routes.text}}</router-link>
+          <div class="side-links" v-for="routes in links" v-bind:key="routes.id">
+            <router-link class="links" :to="`${routes.path}`">{{routes.text}}</router-link>
           </div>
         </nav>
     </div>
     <div id="nav-bar-desktop">
-      <nav>
-        <li v-for="routes in links" v-bind:key="routes.id">
-          <router-link class="links" :to="`${routes.page}`">{{routes.text}}</router-link>
-        </li>
+      <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
+      <nav id="bar-links">
+        <div v-for="routes in links" v-bind:key="routes.id">
+          <router-link class="links" :to="`${routes.path}`">{{routes.text}}</router-link>
+        </div>
       </nav>
     </div>  
   </div>
@@ -59,11 +60,10 @@ export default {
 </script>
 
 <style scoped>
-/* Testing Code */
+/* Hide desktop navigation and not apply any css to prevent longer load times on mobile */
 #nav-bar-desktop {
   display: none;
 }
-/* Code */
 /* Navigation bar for mobile */
 #navigation {
   width: 100vw;
@@ -140,15 +140,15 @@ li {
   top: 55px !important;
   left: 0vw !important;
 }
-.side-links {
-  font-size: 0.6em;
-  margin: 10px auto;
-  visibility: hidden;
-  transition: visibility 2s ease-in 1s, font-size 2s ease-in 1s;
+#nav-side-mobile nav {
+  margin-top: 20px;
 }
-.side {
-  visibility: visible;
+.side-links {
   font-size: 1.4em;
+  visibility: visible;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
 }
 #nav-side-mobile .links {
   color: #d7cec7;
@@ -157,6 +157,44 @@ li {
   width: 100%;
 }
 /* Desktop navigation bar */
-#nav-bar-desktop {
+@media screen and (min-width: 768px) {
+  /* Hide all mobile stuff */
+  #ham-icon {
+    display: none;
+  }
+  #nav-bar-mobile {
+    display: none;
+  }
+  #nav-side-mobile {
+    display: none;
+  }
+  #nav-bar-desktop {
+    height: 65px;
+    display: block;
+    width: 100vw;
+    background-color: white;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
+    -moz-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
+    -ms-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
+    -o-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
+  }
+  #bar-links {
+    position: absolute;
+    right: 45px;
+    line-height: 65px;
+    vertical-align: middle;
+  }
+  #bar-links div {
+    display: inline-block;
+    margin: auto 20px;
+    color: #76323f;
+    background-color: red;
+  }
+  .links {
+    color: #76323f;
+    font-weight: 500;
+    opacity: 0.95;
+  }
 }
 </style>
