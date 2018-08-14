@@ -5,8 +5,10 @@
         <span></span>
         <span></span>
       </div>
-    <div id="nav-bar-mobile">
-      <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
+    <div class="container">
+      <div id="nav-bar-mobile">
+        <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
+      </div>
     </div>
     <div id="nav-side-mobile" :class="{ 'nav-active' : isActive }">       
         <nav>
@@ -15,14 +17,16 @@
           </div>
         </nav>
     </div>
-    <div id="nav-bar-desktop">
-      <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
-      <nav id="bar-links">
-        <div class="bar-items" v-for="routes in links" v-bind:key="routes.id">
-          <router-link class="links" :to="`${routes.path}`">{{routes.text}}</router-link>
-        </div>
-      </nav>
-    </div>  
+    <div class="container">
+      <div id="nav-bar-desktop">
+        <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
+        <nav id="bar-links">
+          <div class="bar-items" v-for="routes in links" v-bind:key="routes.id">
+            <router-link class="links" :to="`${routes.path}`">{{routes.text}}</router-link>
+          </div>
+        </nav>
+      </div>  
+    </div>
   </div>
 </template>
 
@@ -73,7 +77,8 @@ export default {
   width: 27px;
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 23px;
+  z-index: 10;
 }
 #ham-icon span {
   height: 3px;
@@ -85,7 +90,7 @@ export default {
 }
 .home .links {
   width: 185px;
-  line-height: 60px;
+  line-height: 65px;
   vertical-align: middle;
   position: absolute;
   color: #76323f;
@@ -156,6 +161,10 @@ li {
 #nav-side-back {
   width: 100%;
 }
+.container {
+  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.1));
+  z-index: -1;
+}
 /* Desktop navigation bar */
 @media screen and (min-width: 768px) {
   /* Hide all mobile stuff */
@@ -169,20 +178,20 @@ li {
     display: none;
   }
   #nav-bar-desktop {
-    height: 65px;
+    height: 70px;
     display: block;
     width: 100vw;
     background-color: white;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
-    -moz-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
-    -ms-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
-    -o-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55px);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 65px, 0 60px);
+    -moz-clip-path: polygon(0 0, 100% 0, 100% 65px, 0 55px);
+    -ms-clip-path: polygon(0 0, 100% 0, 100% 65px, 0 55px);
+    -o-clip-path: polygon(0 0, 100% 0, 100% 65px, 0 55px);
+    clip-path: polygon(0 0, 100% 0, 100% 70px, 0 60px);
   }
   #bar-links {
     position: absolute;
     right: 45px;
-    line-height: 65px;
+    line-height: 70px;
     vertical-align: middle;
   }
   .bar-items {
@@ -190,13 +199,13 @@ li {
     position: relative;
     margin: auto 10px;
     color: #76323f;
-    height: 65px;
+    height: 70px;
   }
   .bar-items .links {
     position: relative;
     height: 55px;
     text-align: center;
-    line-height: 65px;
+    line-height: 70px;
     display: inline-block;
     padding: 0 7px;
   }
@@ -208,7 +217,7 @@ li {
     width: 100%;
     height: 100%;
     background: transparent;
-    border-bottom: 2px solid rgb(118, 50, 63, 0.9);
+    border-bottom: 2px solid rgba(118, 50, 63, 0.95);
     transform: scale3d(0, 1, 1);
   }
   .bar-items .links:hover::before {
