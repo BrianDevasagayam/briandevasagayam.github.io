@@ -1,18 +1,18 @@
 <template>
   <div id="navigation">
-    <div id="ham-icon" @click="isActive = !isActive">
+    <div id="ham-icon" @click="isActive = !isActive" :class="{ 'open' : isActive}">
         <span></span>
         <span></span>
         <span></span>
       </div>
     <div class="container">
       <div id="nav-bar-mobile">
-        <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
+        <div @click="isActive = false" class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
       </div>
     </div>
     <div id="nav-side-mobile" :class="{ 'nav-active' : isActive }">       
         <nav>
-          <div class="side-links" v-for="routes in links" v-bind:key="routes.id">
+          <div @click="isActive = !isActive" class="side-links" v-for="routes in links" v-bind:key="routes.id">
             <router-link class="links" :to="`${routes.path}`">{{routes.text}}</router-link>
           </div>
         </nav>
@@ -87,6 +87,51 @@ export default {
   display: block;
   margin: 2px auto;
   border-radius: 5px;
+  position: absolute;
+  -webkit-transition: 0.7s ease-in-out;
+  -moz-transition: 0.7s ease-in-out;
+  -o-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
+}
+#ham-icon span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+#ham-icon span:nth-child(2) {
+  top: 6px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#ham-icon span:nth-child(3) {
+  top: 12px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+#ham-icon.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -3px;
+}
+#ham-icon.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+#ham-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 16px;
 }
 .home .links {
   width: 185px;
@@ -139,7 +184,7 @@ li {
   clip-path: polygon(0 0, 100vw 5px, 100vw 100%, 0 100%);
 
   /* Transitions */
-  transition: left 1s ease-in-out, top 1s ease-in-out;
+  transition: left 0.7s ease-in-out, top 0.7s ease-in-out;
 }
 .nav-active {
   top: 55px !important;
