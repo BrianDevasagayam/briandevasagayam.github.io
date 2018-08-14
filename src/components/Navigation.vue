@@ -18,7 +18,7 @@
     <div id="nav-bar-desktop">
       <div class="home"><router-link class="links" to="/">BRIAN DEVASAGAYAM</router-link></div>
       <nav id="bar-links">
-        <div v-for="routes in links" v-bind:key="routes.id">
+        <div class="bar-items" v-for="routes in links" v-bind:key="routes.id">
           <router-link class="links" :to="`${routes.path}`">{{routes.text}}</router-link>
         </div>
       </nav>
@@ -185,11 +185,35 @@ li {
     line-height: 65px;
     vertical-align: middle;
   }
-  #bar-links div {
+  .bar-items {
     display: inline-block;
-    margin: auto 20px;
+    position: relative;
+    margin: auto 10px;
     color: #76323f;
-    background-color: red;
+    height: 65px;
+  }
+  .bar-items .links {
+    position: relative;
+    height: 55px;
+    text-align: center;
+    line-height: 65px;
+    display: inline-block;
+    padding: 0 7px;
+  }
+  .bar-items .links::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-bottom: 2px solid rgb(118, 50, 63, 0.9);
+    transform: scale3d(0, 1, 1);
+  }
+  .bar-items .links:hover::before {
+    transform: scale3d(1, 1, 1);
+    transition: transform 1s;
   }
   .links {
     color: #76323f;
