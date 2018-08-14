@@ -27,7 +27,7 @@
           if (file.match(/\.(js|css)$/)) { %>
     <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
     <% }}} %>
-      <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto:400,500,700" rel="stylesheet">
 </head>
 
 <body>
@@ -41,3 +41,12 @@
 </body>
 
 </html>
+<style>
+  * {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+</style>
