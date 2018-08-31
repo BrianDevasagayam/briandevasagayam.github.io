@@ -4,6 +4,7 @@
       <Navigation></Navigation>
     </header>
     <main>
+      <Home></Home>
       <router-view></router-view>
     </main>
   </div>
@@ -11,10 +12,12 @@
 
 <script>
 import Navigation from "@/components/Navigation.vue";
+import Home from "@/components/Home.vue";
 export default {
   name: "app",
   components: {
-    Navigation: Navigation
+    Navigation: Navigation,
+    Home: Home
   }
 };
 </script>
@@ -22,6 +25,6 @@ export default {
 <style>
 body {
   margin: 0;
-  background-color: #c09f80;
+  /* background-color: #c09f80; */
 }
 </style>
