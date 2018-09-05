@@ -1,9 +1,12 @@
 <template>
   <div id="home">
-    <p>{{ welcome }}</p>
-    <p id="p1">{{ p1 }}</p>
-    <p id="p2">{{ p2 }}</p>
-    <p id="p3">{{ p3 }}</p>
+    <div id="innerHome">
+      <p id="fname" class="ft_heading">{{ fname }}</p>
+      <p id="lname" class="ft_heading">{{ lname }}</p>
+      <p id="p1" class="ft_body">{{ p1 }}</p>
+      <p id="p2" class="ft_body">{{ p2 }}</p>
+      <p id="p3" class="ft_body">{{ p3 }}</p>
+    </div>
   </div>
 </template>
 
@@ -12,7 +15,8 @@ export default {
   name: "Home",
   data() {
     return {
-      welcome: "Welcome to the Home page",
+      fname: "Brian A.",
+      lname: "Devasagayam",
       p1:
         "Welcome to my website! I am a current computer engineering undergraduate at the university of waterloo entering my 2A semester. I made this website using Vue.js, HTML and CSS to showcase all of the experience I have gained over my career. I am currently looking for new employment opportunities for the Winter 2019 co-op term.",
       p2:
@@ -25,12 +29,33 @@ export default {
 </script>
 
 <style>
-#home {
+body {
   background-color: #c09f80;
-  height: 100vh;
-  width: 100vw;
+}
+#innerHome {
   position: absolute;
-  top: 0;
-  z-index: -1;
+  top: 20%;
+  text-align: center;
+}
+.ft_body {
+  font-family: "Roboto";
+  font-weight: 400;
+}
+.ft_heading {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 2.5em;
+  color: #76323f;
+}
+#p1,
+#p2,
+#p3 {
+  margin: 20px 15%;
+}
+
+@media screen and (min-width: 768px) {
+  .ft_heading {
+    font-size: 3em;
+  }
 }
 </style>
