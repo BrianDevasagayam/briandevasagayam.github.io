@@ -1,6 +1,6 @@
 <template>
   <div id="resume">
-    
+
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {};
 
 <style>
 #resume {
-  background-color: #c09f80;
+  background-color: #d7cec7;
   height: 100vh;
   width: 100vw;
   position: absolute;
