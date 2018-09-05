@@ -29,12 +29,17 @@ export default {
 </script>
 
 <style>
-body {
+#home {
   background-color: #c09f80;
+  height: 140vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
 #innerHome {
   position: absolute;
-  top: 20%;
+  top: 100px;
   text-align: center;
 }
 .ft_body {
@@ -52,10 +57,16 @@ body {
 #p3 {
   margin: 20px 15%;
 }
+#lname {
+  margin: 0 auto 30px auto;
+}
 
 @media screen and (min-width: 768px) {
   .ft_heading {
     font-size: 3em;
+  }
+  #home {
+    height: 100vh;
   }
 }
 </style>
