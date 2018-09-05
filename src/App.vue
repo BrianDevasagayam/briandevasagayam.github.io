@@ -4,7 +4,6 @@
       <Navigation></Navigation>
     </header>
     <main>
-      <Home></Home>
       <router-view></router-view>
     </main>
   </div>
@@ -16,8 +15,7 @@ import Home from "@/components/Home.vue";
 export default {
   name: "app",
   components: {
-    Navigation: Navigation,
-    Home: Home
+    Navigation: Navigation
   }
 };
 </script>
