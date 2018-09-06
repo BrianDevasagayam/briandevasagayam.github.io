@@ -33,7 +33,7 @@ export default {
   top: 30%;
   z-index: 20;
   left: 50%;
-  margin: 0 0 0 -5vw;
+  margin: 0 0 0 -50px;
 }
 .icons8 {
   position: absolute;
@@ -46,13 +46,15 @@ export default {
 #body {
   position: absolute;
   top: 50%;
+  margin: 0 5%;
   text-align: center;
+  width: 90vw;
 }
 .ft_body {
   font-family: "Roboto";
   font-weight: 400;
 }
-/* Work In Progress Code End */
+/* Work In Progress Page Code End */
 /* On page load text animation */
 .fade-in {
   opacity: 0;
