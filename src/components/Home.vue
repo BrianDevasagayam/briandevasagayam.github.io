@@ -3,9 +3,9 @@
     <div id="innerHome">
       <p id="fname" class="ft_heading">{{ fname }}</p>
       <p id="lname" class="ft_heading">{{ lname }}</p>
-      <p id="p1" class="ft_body">{{ p1 }}</p>
-      <p id="p2" class="ft_body">{{ p2 }}</p>
-      <p id="p3" class="ft_body">{{ p3 }}</p>
+      <p id="p1" class="ft_body fade-in">{{ p1 }}</p>
+      <p id="p2" class="ft_body fade-in">{{ p2 }}</p>
+      <p id="p3" class="ft_body fade-in">{{ p3 }}</p>
     </div>
   </div>
 </template>
@@ -60,6 +60,25 @@ export default {
 #lname {
   margin: 0 auto 30px auto;
 }
+/* On page load text animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/* Animation End */
 
 @media screen and (min-width: 768px) {
   .ft_heading {
