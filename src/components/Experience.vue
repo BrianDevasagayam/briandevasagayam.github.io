@@ -27,6 +27,7 @@ export default {
   top: 0;
   z-index: -1;
 }
+/* Work In Progress Page Code */
 .wip {
   position: absolute;
   top: 30%;
@@ -45,13 +46,13 @@ export default {
 #body {
   position: absolute;
   top: 50%;
-  left: 50%;
-  margin: 0 0 0 -25vw;
+  text-align: center;
 }
 .ft_body {
   font-family: "Roboto";
   font-weight: 400;
 }
+/* Work In Progress Code End */
 /* On page load text animation */
 .fade-in {
   opacity: 0;
