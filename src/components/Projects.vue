@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       WIP:
-        "Sorry but this page isn't done yet. Check back later and maybe they'll be something here."
+        "This page is currently under construction. Please come back at a later date!"
     };
   }
 };
