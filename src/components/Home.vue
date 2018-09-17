@@ -1,6 +1,7 @@
 <template>
   <div id="home">
     <div id="innerHome">
+      <div id="profile-pic"></div>
       <p id="fname" class="ft_heading">{{ fname }}</p>
       <p id="lname" class="ft_heading">{{ lname }}</p>
       <p id="p1" class="ft_body fade-in">{{ p1 }}</p>
@@ -38,8 +39,9 @@ export default {
   z-index: -1;
 }
 #innerHome {
-  position: absolute;
+  position: relative;
   top: 100px;
+  width: 100%;
   text-align: center;
 }
 .ft_body {
@@ -51,6 +53,17 @@ export default {
   font-weight: 700;
   font-size: 2.5em;
   color: #76323f;
+}
+#profile-pic {
+  background: url("../assets/profile-pic.jpg");
+  background-size: cover;
+  display: inline-block;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+}
+#fname {
+  margin-top: 20px;
 }
 #p1,
 #p2,
