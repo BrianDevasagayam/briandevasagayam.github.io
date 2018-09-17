@@ -55,7 +55,7 @@ export default {
   color: #76323f;
 }
 #profile-pic {
-  background: url("../assets/profile-pic.jpg");
+  background-image: url("../assets/profile-pic.jpg");
   background-size: cover;
   display: inline-block;
   height: 180px;
