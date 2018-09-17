@@ -32,7 +32,7 @@ export default {
 <style>
 #home {
   background-color: #c09f80;
-  height: 140vh;
+  height: 960px;
   width: 100vw;
   position: absolute;
   top: 0;
