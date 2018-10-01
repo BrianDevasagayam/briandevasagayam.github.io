@@ -21,8 +21,11 @@ export default {
 </script>
 
 <style>
+html,
 body {
   margin: 0;
-  /* background-color: #c09f80; */
+  height: 100%;
+  padding: 0;
+  overflow-x: hidden;
 }
 </style>

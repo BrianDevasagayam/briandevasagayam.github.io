@@ -1,5 +1,6 @@
 <template>
   <div id="home">
+    <div id="nav-back"></div>
     <div id="innerHome">
       <div id="profile-pic"></div>
       <p id="fname" class="ft_heading">{{ fname }}</p>
@@ -19,34 +20,38 @@ export default {
       fname: "Brian A.",
       lname: "Devasagayam",
       p1:
-        "Welcome to my website! I am a current computer engineering undergraduate at the university of waterloo entering my 2A semester. I made this website using Vue.js, HTML and CSS to showcase all of the experience I have gained over my career. I am currently looking for new employment opportunities for the Winter 2019 co-op term.",
+        "Welcome to my website! I am a current computer engineering undergraduate at the University of Waterloo entering my 2A semester. I made this website using Vue.js, HTML and CSS to showcase all of the experience I have gained over my career. I am currently looking for new employment opportunities for the Winter 2019 co-op term.",
       p2:
         "I currently have an affinity for full stack development but am open and looking for new opportunities in traditional software development and network security.",
       p3:
-        "My other non computer related interest includes film, pool, finance and the marvel cinematic universe."
+        "My other non computer related interest includes film, pool, finance and the Marvel Cinematic universe."
     };
   }
 };
 </script>
 
 <style>
-#home {
-  background-color: #c09f80;
-  height: 960px;
+#nav-back {
+  height: 70px;
   width: 100vw;
-  position: absolute;
-  top: 0;
+  background-color: #c09f80;
   z-index: -1;
+  position: absolute;
+  top: 0px;
 }
 #innerHome {
-  position: relative;
-  top: 100px;
-  width: 100%;
+  background-color: #c09f80;
+  position: absolute;
   text-align: center;
+  z-index: -1;
+  min-height: calc(100% - 70px);
+  width: 100vw;
+  top: 70px;
 }
 .ft_body {
   font-family: "Roboto";
   font-weight: 400;
+  font-size: 1em;
 }
 .ft_heading {
   font-family: "Raleway";
@@ -58,9 +63,10 @@ export default {
   background-image: url("../assets/profile-pic.jpg");
   background-size: cover;
   display: inline-block;
-  height: 180px;
-  width: 180px;
+  height: 12em;
+  width: 12em;
   border-radius: 50%;
+  margin-top: 10px;
 }
 #fname {
   margin-top: 20px;
@@ -96,9 +102,6 @@ export default {
 @media screen and (min-width: 768px) {
   .ft_heading {
     font-size: 3em;
-  }
-  #home {
-    height: 100vh;
   }
 }
 </style>
